@@ -1,11 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 import { keepTheme } from "keep-react/keepTheme";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -16,7 +14,7 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindcssAnimate],
 };
 
 export default keepTheme(config);
