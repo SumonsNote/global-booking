@@ -1,7 +1,6 @@
 "use client";
 
 import { submitReview } from "@/app/actions";
-import { Button, Textarea } from "keep-react";
 import { useState, useTransition } from "react";
 
 export const CreateReview = ({ hotelId, userId }) => {
@@ -27,22 +26,23 @@ export const CreateReview = ({ hotelId, userId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
-      <Textarea
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+      <textarea
         name="review"
         placeholder="Give a review..."
         rows={4}
         value={review}
         onChange={(e) => setReview(e.target.value)}
         required
+        className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
       />
-      <Button
+      <button
         type="submit"
-        className="bg-primary hover:bg-primary/80 text-white font-bold py-2 px-4 rounded"
+        className="bg-primary hover:bg-primary/80 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
         disabled={isPending}
       >
         {isPending ? "Submitting..." : "Submit"}
-      </Button>
+      </button>
     </form>
   );
 };
